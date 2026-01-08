@@ -1,24 +1,24 @@
 // prisma/seed.js
-const prisma = require('../lib/prisma');
+const prisma = require("./prisma");
 
 async function main() {
-  console.log('Seeding: start');
+  console.log("Seeding: start");
 
   const user = await prisma.user.upsert({
-    where: { username: 'admin' },
+    where: { username: "admin" },
     update: {},
-    create: { username: 'admin', password: 'password' },
+    create: { username: "admin", password: "password" },
   });
 
   const car = await prisma.car.upsert({
     where: { id: 1 },
     update: {},
     create: {
-      name: 'Avanza',
-      brand: 'Toyota',
-      imageUrl: '',
-      color: 'White',
-      pricePerDay: '150.00',
+      name: "Avanza",
+      brand: "Toyota",
+      imageUrl: "",
+      color: "White",
+      pricePerDay: "150.00",
     },
   });
 
@@ -28,13 +28,13 @@ async function main() {
       carId: car.id,
       rentDate: new Date(),
       returnDate: new Date(Date.now() + 1000 * 60 * 60 * 24),
-      paymentStatus: 'UNPAID',
-      borrowingStatus: 'SCHEDULED',
-      totalPrice: '150.00',
+      paymentStatus: "UNPAID",
+      borrowingStatus: "SCHEDULED",
+      totalPrice: "150.00",
     },
   });
 
-  console.log('Seeding: done');
+  console.log("Seeding: done");
 }
 
 main()

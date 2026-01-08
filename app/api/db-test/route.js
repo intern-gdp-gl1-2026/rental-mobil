@@ -1,4 +1,4 @@
-import prisma from '../../../lib/prisma';
+import prisma from "@/prisma/prisma";
 
 export async function GET() {
   try {
@@ -7,9 +7,11 @@ export async function GET() {
     const rents = await prisma.rent.count();
     return new Response(JSON.stringify({ users, cars, rents }), {
       status: 200,
-      headers: { 'Content-Type': 'application/json' },
+      headers: { "Content-Type": "application/json" },
     });
   } catch (err) {
-    return new Response(JSON.stringify({ error: String(err) }), { status: 500 });
+    return new Response(JSON.stringify({ error: String(err) }), {
+      status: 500,
+    });
   }
 }
