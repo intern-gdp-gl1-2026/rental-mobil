@@ -1,5 +1,5 @@
 // tailwind.config.js
-const { color } = require("./constants/color");
+const { color } = require("./src/constants/color");
 
 module.exports = {
   content: [

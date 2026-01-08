@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/src/lib/utils";
 
 export default function HamburgerButton({ isOpen, setIsOpen, colorClassName }) {
   return (

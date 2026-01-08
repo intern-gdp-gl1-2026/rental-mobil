@@ -1,5 +1,5 @@
 // prisma/seed.js
-const prisma = require("./prisma");
+const prisma = require("../src/infrastructure/database/prisma");
 
 async function main() {
   console.log("Seeding: start");
